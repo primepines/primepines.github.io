@@ -1,588 +1,884 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="keywords"
+      content="земельна ділянка, ліс, маєтність, родова садиба, 714-909-819, 9418-2404-1995-888"
+    />
+    <title>58 км від Києва — Маєтність 1,2 га у віковому сосновому бору</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="keywords" content="земельна ділянка, ліс, маєтність, родова садиба, 714-909-819, 9418-2404-1995-888" />
-  <title>58 км від Києва — Маєтність 1,2 га у віковому сосновому бору</title>
+    <style>
+      :root {
+        --bg-body: #ece6dc;
+        --bg-surface: #f4eee5;
+        --bg-card: #e2dbce;
+        --text-main: #121110;
+        --text-muted: #49453e;
+        --text-subtle: #7a7368;
+        --border-color: #121110;
+        --border-light: rgba(18, 17, 16, 0.18);
+        --accent: #121110;
+        --accent-contrast: #ece6dc;
 
-  <style>
-    :root {
-      --bg-body: #ece6dc;
-      --bg-surface: #f4eee5;
-      --bg-card: #e2dbce;
-      --text-main: #121110;
-      --text-muted: #49453e;
-      --text-subtle: #7a7368;
-      --border-color: #121110;
-      --border-light: rgba(18, 17, 16, 0.18);
-      --accent: #121110;
-      --accent-contrast: #ece6dc;
+        --font-base: Georgia, serif;
 
-      --font-base: Georgia, serif;
+        --spacing-unit: 8px;
+        --space-xs: calc(var(--spacing-unit) * 1);
+        --space-sm: calc(var(--spacing-unit) * 2);
+        --space-md: calc(var(--spacing-unit) * 3);
+        --space-lg: calc(var(--spacing-unit) * 4);
+        --space-xl: calc(var(--spacing-unit) * 6);
 
-      --spacing-unit: 8px;
-      --space-xs: calc(var(--spacing-unit) * 1);
-      --space-sm: calc(var(--spacing-unit) * 2);
-      --space-md: calc(var(--spacing-unit) * 3);
-      --space-lg: calc(var(--spacing-unit) * 4);
-      --space-xl: calc(var(--spacing-unit) * 6);
+        --radius: 2px;
+        --max-width: 620px;
+      }
 
-      --radius: 2px;
-      --max-width: 620px;
-    }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
+      html {
+        font-size: 16px;
+        background-color: var(--bg-body);
+        color: var(--text-main);
+        font-family: var(--font-base);
+        scroll-behavior: smooth;
+      }
 
-    html {
-      font-size: 16px;
-      background-color: var(--bg-body);
-      color: var(--text-main);
-      font-family: var(--font-base);
-      scroll-behavior: smooth;
-    }
+      body {
+        line-height: 1.62;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: var(--space-md) 0 var(--space-xl);
+      }
 
-    body {
-      line-height: 1.62;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: var(--space-md) 0 var(--space-xl);
-    }
+      .viewport {
+        width: 100%;
+        max-width: var(--max-width);
+        padding: 0 var(--space-md);
+      }
 
-    .viewport {
-      width: 100%;
-      max-width: var(--max-width);
-      padding: 0 var(--space-md);
-    }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-base);
+        font-weight: normal;
+        color: var(--text-main);
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+      }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: var(--font-base);
-      font-weight: normal;
-      color: var(--text-main);
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-    }
+      h1 {
+        font-size: clamp(1.85rem, 6.2vw, 2.45rem);
+        margin-top: var(--space-xs);
+        margin-bottom: var(--space-sm);
+      }
 
-    h1 {
-      font-size: clamp(1.85rem, 6.2vw, 2.45rem);
-      margin-top: var(--space-xs);
-      margin-bottom: var(--space-sm);
-    }
+      h2 {
+        font-size: clamp(1.3rem, 4.8vw, 1.6rem);
+        margin-top: var(--space-xl);
+        margin-bottom: var(--space-sm);
+        border-top: 1px solid var(--border-color);
+        padding-top: var(--space-md);
+      }
 
-    h2 {
-      font-size: clamp(1.3rem, 4.8vw, 1.6rem);
-      margin-top: var(--space-xl);
-      margin-bottom: var(--space-sm);
-      border-top: 1px solid var(--border-color);
-      padding-top: var(--space-md);
-    }
+      p {
+        margin-bottom: var(--space-md);
+        font-size: 1.05rem;
+        color: var(--text-main);
+      }
 
-    p {
-      margin-bottom: var(--space-md);
-      font-size: 1.05rem;
-      color: var(--text-main);
-    }
+      p.lead {
+        font-size: 1.18rem;
+        line-height: 1.5;
+        color: var(--text-muted);
+        margin-bottom: var(--space-md);
+      }
 
-    p.lead {
-      font-size: 1.18rem;
-      line-height: 1.5;
-      color: var(--text-muted);
-      margin-bottom: var(--space-md);
-    }
+      .meta-tag {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-subtle);
+        display: block;
+      }
 
-    .meta-tag {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-subtle);
-      display: block;
-    }
+      blockquote {
+        border-left: 2px solid var(--border-color);
+        padding: var(--space-xs) 0 var(--space-xs) var(--space-md);
+        margin: var(--space-md) 0 var(--space-lg);
+        font-style: italic;
+        color: var(--text-main);
+        font-size: 1.1rem;
+      }
 
-    blockquote {
-      border-left: 2px solid var(--border-color);
-      padding: var(--space-xs) 0 var(--space-xs) var(--space-md);
-      margin: var(--space-md) 0 var(--space-lg);
-      font-style: italic;
-      color: var(--text-main);
-      font-size: 1.1rem;
-    }
+      .contact-box {
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-surface);
+        padding: var(--space-md);
+        margin: var(--space-md) 0 var(--space-lg);
+      }
 
-    .contact-box {
-      border: 1px solid var(--border-color);
-      background-color: var(--bg-surface);
-      padding: var(--space-md);
-      margin: var(--space-md) 0 var(--space-lg);
-    }
+      .contact-box-title {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-subtle);
+        margin-bottom: var(--space-xs);
+      }
 
-    .contact-box-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-subtle);
-      margin-bottom: var(--space-xs);
-    }
+      .telegram-btn {
+        display: block;
+        width: 100%;
+        background-color: var(--accent);
+        color: var(--accent-contrast);
+        text-align: center;
+        padding: 14px var(--space-sm);
+        text-decoration: none;
+        font-family: var(--font-base);
+        font-size: 1.05rem;
+        border-radius: var(--radius);
+        border: 1px solid var(--border-color);
+        margin-bottom: var(--space-xs);
+      }
 
-    .telegram-btn {
-      display: block;
-      width: 100%;
-      background-color: var(--accent);
-      color: var(--accent-contrast);
-      text-align: center;
-      padding: 14px var(--space-sm);
-      text-decoration: none;
-      font-family: var(--font-base);
-      font-size: 1.05rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-color);
-      margin-bottom: var(--space-xs);
-    }
+      .telegram-btn:active {
+        opacity: 0.85;
+      }
 
-    .telegram-btn:active {
-      opacity: 0.85;
-    }
+      .contact-warning {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        line-height: 1.45;
+        border-top: 1px dashed var(--border-light);
+        padding-top: var(--space-xs);
+      }
 
-    .contact-warning {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-      border-top: 1px dashed var(--border-light);
-      padding-top: var(--space-xs);
-    }
+      .price-card {
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-surface);
+        padding: var(--space-md);
+        margin-bottom: var(--space-md);
+      }
 
-    .price-card {
-      border: 1px solid var(--border-color);
-      background-color: var(--bg-surface);
-      padding: var(--space-md);
-      margin-bottom: var(--space-md);
-    }
+      .price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin: var(--space-xs) 0;
+        flex-wrap: wrap;
+      }
 
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin: var(--space-xs) 0;
-      flex-wrap: wrap;
-    }
+      .price-old {
+        font-size: 1.35rem;
+        color: var(--text-subtle);
+        text-decoration: line-through;
+      }
 
-    .price-old {
-      font-size: 1.35rem;
-      color: var(--text-subtle);
-      text-decoration: line-through;
-    }
+      .price-num {
+        font-size: 2.3rem;
+        line-height: 1;
+        color: var(--text-main);
+      }
 
-    .price-num {
-      font-size: 2.3rem;
-      line-height: 1;
-      color: var(--text-main);
-    }
+      .price-details {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        border-top: 1px dashed var(--border-light);
+        padding-top: var(--space-xs);
+        line-height: 1.5;
+      }
 
-    .price-details {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      border-top: 1px dashed var(--border-light);
-      padding-top: var(--space-xs);
-      line-height: 1.5;
-    }
+      .price-note {
+        font-weight: normal;
+        color: var(--text-main);
+        display: block;
+        margin-bottom: 4px;
+      }
 
-    .price-note {
-      font-weight: normal;
-      color: var(--text-main);
-      display: block;
-      margin-bottom: 4px;
-    }
+      .spec-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background-color: var(--border-color);
+        border: 1px solid var(--border-color);
+        margin-bottom: var(--space-lg);
+      }
 
-    .spec-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background-color: var(--border-color);
-      border: 1px solid var(--border-color);
-      margin-bottom: var(--space-lg);
-    }
+      .spec-item {
+        background-color: var(--bg-surface);
+        padding: var(--space-sm);
+      }
 
-    .spec-item {
-      background-color: var(--bg-surface);
-      padding: var(--space-sm);
-    }
+      .spec-label {
+        display: block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-subtle);
+        margin-bottom: 3px;
+      }
 
-    .spec-label {
-      display: block;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-subtle);
-      margin-bottom: 3px;
-    }
+      .spec-value {
+        font-size: 1.05rem;
+      }
 
-    .spec-value {
-      font-size: 1.05rem;
-    }
+      .feature-list {
+        list-style: none;
+        margin: var(--space-md) 0;
+      }
 
-    .feature-list {
-      list-style: none;
-      margin: var(--space-md) 0;
-    }
+      .feature-list li {
+        position: relative;
+        padding-left: 22px;
+        margin-bottom: var(--space-xs);
+        font-size: 1rem;
+      }
 
-    .feature-list li {
-      position: relative;
-      padding-left: 22px;
-      margin-bottom: var(--space-xs);
-      font-size: 1rem;
-    }
+      .feature-list li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--text-muted);
+      }
 
-    .feature-list li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: var(--text-muted);
-    }
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: var(--space-md) 0;
+      }
 
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: var(--space-md) 0;
-    }
+      .data-table tr {
+        border-bottom: 1px dashed var(--border-light);
+      }
 
-    .data-table tr {
-      border-bottom: 1px dashed var(--border-light);
-    }
+      .data-table td {
+        padding: var(--space-xs) 0;
+        font-size: 0.95rem;
+        vertical-align: top;
+      }
 
-    .data-table td {
-      padding: var(--space-xs) 0;
-      font-size: 0.95rem;
-      vertical-align: top;
-    }
+      .data-table td:last-child {
+        text-align: right;
+        padding-left: var(--space-sm);
+      }
 
-    .data-table td:last-child {
-      text-align: right;
-      padding-left: var(--space-sm);
-    }
+      .data-table td:first-child {
+        color: var(--text-muted);
+        white-space: nowrap;
+      }
 
-    .data-table td:first-child {
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
+      .image-block {
+        margin: var(--space-lg) 0;
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-surface);
+      }
 
-    .image-block {
-      margin: var(--space-lg) 0;
-      border: 1px solid var(--border-color);
-      background-color: var(--bg-surface);
-    }
+      .image-block img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-bottom: 1px solid var(--border-color);
+        background-color: var(--bg-card);
+      }
 
-    .image-block img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-bottom: 1px solid var(--border-color);
-      background-color: var(--bg-card);
-    }
+      .image-block figcaption {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--bg-surface);
+      }
 
-    .image-block figcaption {
-      padding: var(--space-xs) var(--space-sm);
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      background-color: var(--bg-surface);
-    }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-sm);
+        margin: var(--space-md) 0 var(--space-lg);
+      }
 
-    .project-box {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: var(--space-md);
-      margin: var(--space-md) 0 var(--space-lg);
-    }
+      @media (max-width: 480px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    .project-box h4 {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: var(--space-xs);
-    }
-  </style>
-</head>
+      .gallery-grid .image-block {
+        margin: 0;
+        height: 100%;
+      }
 
-<body>
+      .gallery-grid .image-block img {
+        height: 100%;
+        object-fit: cover;
+      }
 
-  <main class="viewport">
+      .map-widget {
+        width: 100%;
+        height: 450px;
+        border: 1px solid var(--border-color);
+        margin: var(--space-md) 0 var(--space-xs);
+        background-color: var(--bg-card);
+      }
 
-    <section>
-      <span class="meta-tag">58 км від Києва · 1,8 км від траси Київ–Полтава</span>
-      <h1>Цілісний лісовий наділ 1,2 га у віковому сосновому бору</h1>
+      .map-widget iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
 
-      <p class="lead">
-        Відчуйте <strong>первозданну тишу</strong> та насолоду серед природи! Це справжня <strong>обитель сили</strong>.
-        Усього за 58 км від Києва, на околиці хутора Соколі, на виїзді з міста Березань, на вас чекає
-        унікальний об’єкт — <strong>маєтність понад гектар</strong>, що складається з чотирьох земельних ділянок плюс
-        три сінокоси.
-      </p>
+      .map-link-wrapper {
+        margin-bottom: var(--space-lg);
+        text-align: right;
+      }
 
-      <div class="price-card">
-        <span class="meta-tag" id="9418-2404">Вартість об'єкта</span>
-        <div class="price-row">
-          <span class="price-old">125 000 $</span>
-          <span class="price-num">55 000 $</span>
-        </div>
-        <div class="price-details">
-          <span class="price-note">Ціна 55 000 $ актуальна лише до закінчення воєнного стану в Україні.</span>
-          <strong>Бездоганна історія: земля перебуває у власності однієї родини з 1995 року. Абсолютна юридична чистота
-            та прозорість.</strong>
-        </div>
-      </div>
+      .map-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.95rem;
+        font-weight: bold;
+        color: var(--text-main);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 2px;
+      }
 
-      <div class="contact-box">
-        <div class="contact-box-title">Для отримання додаткової інформації зв’яжіться зі мною вже сьогодні</div>
-        <a href="https://telegram.me/+380935896874" class="telegram-btn" target="_blank" rel="noopener">
-          Написати в Telegram: 093 589 68 74
-        </a>
-        <div class="contact-warning">
-          <strong>Зверніть увагу:</strong> На дзвінки не відповідаю. Уся додаткова інформація надається за запитом через
-          Телеграм. На фото вказані координати об’єкта — ви можете самостійно оглянути ділянки у зручний час.
-        </div>
-      </div>
-    </section>
+      .map-link:hover {
+        background-color: var(--border-color);
+        color: var(--bg-body);
+      }
 
-    <div class="spec-grid">
-      <div class="spec-item">
-        <span class="spec-label">Склад масиву</span>
-        <span class="spec-value">1,2 га (4 діл. + 3 сінокоси)</span>
-      </div>
-      <div class="spec-item">
-        <span class="spec-label">Відстань від Києва</span>
-        <span class="spec-value">58 км (1,8 км траса)</span>
-      </div>
-      <div class="spec-item">
-        <span class="spec-label">Електрика</span>
-        <span class="spec-value">3 фази</span>
-      </div>
-      <div class="spec-item">
-        <span class="spec-label">Приватність</span>
-        <span class="spec-value">Без межових сусідів</span>
-      </div>
-    </div>
+      .project-box {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        padding: var(--space-md);
+        margin: var(--space-md) 0 var(--space-lg);
+      }
 
-    <figure class="image-block">
-      <img src="imgs/render.jpg" alt="Унікальний гектар соснового лісу — чиста земля сили 9418" loading="eager" />
-      <figcaption>
-        <span>Концептуальне бачення заміського комплексу</span>
-        <span>Вид 01</span>
-      </figcaption>
-    </figure>
+      .project-box h4 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: var(--space-xs);
+      }
+    </style>
+  </head>
 
-    <article>
-      <h2>Природа, атмосфера та спокій</h2>
-      <p>
-        Цей <strong>бездоганний</strong> простір — справжній рай для тих, хто шукає спокою, натхнення та єдності з
-        природою. Ділянки розташовані на
-        затишній галявині, повністю оточеній <strong>прадавнім лісовим масивом</strong>, де панує чисте хвойне повітря,
-        що наповнює силами та
-        здоров'ям, тиша та природна енергія — це глибоко <strong>ресурсний</strong> об'єкт і саме те, що шукають гості
-        заміських комплексів або поціновувачі
-        усамітнення.
-      </p>
+  <body>
+    <main class="viewport">
+      <section>
+        <span class="meta-tag"
+          >58 км від Києва · 1,8 км від траси Київ–Полтава</span
+        >
+        <h1>Цілісний лісовий наділ 1,2 га у віковому сосновому бору</h1>
 
-      <p>
-        Поруч протікає чудова мальовнича річка, що додає цьому місцю особливого шарму та відкриває широкі можливості:
-      </p>
-      <ul class="feature-list">
-        <li>Прогулянки вздовж берега та зони природного релаксу;</li>
-        <li>Риболовля чи просто насолода краєвидом на воду;</li>
-        <li>Облаштування власного озера зі своїм рибним господарством (форель, лосось та інше).</li>
-      </ul>
+        <figure class="image-block" style="margin-top: 0">
+          <img
+            src="imgs/forest_main.jpg"
+            alt="Віковий сосновий бір — чиста земля сили 9418"
+            loading="eager"
+          />
+        </figure>
 
-      <blockquote>
-        «Тут можна проводити ретрити, медитуючи під шепіт сосен, відчувати внутрішній баланс та
-        <strong>недоторканний</strong> спокій. Зустрічати мальовничі
-        заходи сонця, насолоджуючись тишею та красою навколишнього світу. Займатися творчістю або іншою діяльністю, яка
-        надихає вас у цьому спокійному та енергетично наповненому місці.»
-      </blockquote>
-
-      <figure class="image-block">
-        <img src="imgs/render2.jpg" alt="Абсолютна приватність і віковий ліс — родова маєтність 1995" loading="lazy" />
-        <figcaption>
-          <span>Еко-будинки з інтеграцією в ландшафт</span>
-          <span>Вид 02</span>
-        </figcaption>
-      </figure>
-
-      <h2>Будівлі на ділянці</h2>
-      <p>
-        На ділянці розміщено тимчасову споруду (59 кв. м), а також дві невеликі господарчі будівлі. Основна споруда
-        може бути використана як додаткове бонусне технічне
-        приміщення або, за відсутності потреби, її можна демонтувати.
-      </p>
-
-      <h2>Локація з великим потенціалом для бізнесу або маєтку</h2>
-      <p>
-        Ділянка не має межових сусідів, що гарантує <strong>абсолютну приватність</strong> та відкриває простір для
-        втілення
-        комерційних або приватних планів у відокремленій локації.
-      </p>
-
-      <p><strong>Це ідеальне місце для створення:</strong></p>
-      <ul class="feature-list">
-        <li><strong>Закритої родової садиби або шляхетної маєтності;</strong></li>
-        <li>Ретритів, йога- та SPA-програм;</li>
-        <li>Еко-готелю або глемпінгу;</li>
-        <li>Клубного заміського комплексу;</li>
-        <li>Творчих резиденцій або приватної бази відпочинку.</li>
-      </ul>
-
-      <p>
-        Тут легко уявити вечори, милуючись заходом сонця, та гостей, які приїжджають за тишею, природою та повним
-        перезавантаженням.
-      </p>
-
-      <div class="project-box">
-        <h4>Концептуальне рішення (дизайн-проєкт):</h4>
-        <p style="font-size: 0.95rem; margin-bottom: var(--space-xs);">
-          Є розроблене концептуальне дизайнерське бачення розвитку території, яке передбачає:
+        <p class="lead">
+          Відчуйте <strong>первозданну тишу</strong> та насолоду серед природи!
+          Це справжня <strong>обитель сили</strong>. Усього за 58 км від Києва,
+          на околиці хутора Соколі, на виїзді з міста Березань, на вас чекає
+          унікальний об’єкт — <strong>маєтність понад гектар</strong>, що
+          складається з чотирьох земельних ділянок плюс три сінокоси.
         </p>
-        <ul class="feature-list" style="margin: 0;">
-          <li>21 будиночок для гостей;</li>
-          <li>Ресторан та бар;</li>
-          <li>SPA-комплекс;</li>
-          <li>Літній кінотеатр.</li>
-        </ul>
-      </div>
 
-      <figure class="image-block">
-        <img src="imgs/interior3d.jpg" alt="Простір для закритої резиденції без сусідів 888" loading="lazy" />
-        <figcaption>
-          <span>Концептуальне планування будинку</span>
-          <span>План 3D</span>
-        </figcaption>
-      </figure>
+        <div class="price-card">
+          <span class="meta-tag" id="9418-2404">Вартість об'єкта</span>
+          <div class="price-row">
+            <span class="price-old">125 000 $</span>
+            <span class="price-num">55 000 $</span>
+          </div>
+          <div class="price-details">
+            <span class="price-note"
+              >Ціна 55 000 $ актуальна лише до закінчення воєнного стану в
+              Україні.</span
+            >
+            <strong
+              >Бездоганна історія: земля перебуває у власності однієї родини з
+              1995 року. Абсолютна юридична чистота та прозорість.</strong
+            >
+          </div>
+        </div>
 
-      <figure class="image-block">
-        <img src="imgs/interior.jpg" alt="Інтер'єрне рішення з панорамним видом" loading="lazy" />
-        <figcaption>
-          <span>Інтер'єрне рішення для відпочинку з видом на природу</span>
-          <span>Інтер'єр</span>
-        </figcaption>
-      </figure>
+        <div class="contact-box">
+          <div class="contact-box-title">
+            Для отримання додаткової інформації зв’яжіться зі мною вже сьогодні
+          </div>
+          <a
+            href="https://telegram.me/+380935896874"
+            class="telegram-btn"
+            target="_blank"
+            rel="noopener"
+          >
+            Написати в Telegram: 093 589 68 74
+          </a>
+          <div class="contact-warning">
+            <strong>Зверніть увагу:</strong> На дзвінки не відповідаю. Уся
+            додаткова інформація надається за запитом через Телеграм. Координати
+            об’єкта вказані на карті нижче — ви можете самостійно оглянути
+            ділянки у зручний час.
+          </div>
+        </div>
+      </section>
 
-      <figure class="image-block">
-        <img src="imgs/planwatercolor.jpg" alt="Акварельна концептуальна схема території" loading="lazy" />
-        <figcaption>
-          <span>Концептуальна схема зонування простору (1,2 га)</span>
-          <span>Дизайн-проєкт</span>
-        </figcaption>
-      </figure>
-
-      <figure class="image-block">
-        <img src="imgs/plan_close.jpg" alt="Схема зони відпочинку та SPA" loading="lazy" />
-        <figcaption>
-          <span>Концептуальне планування зони відпочинку та SPA</span>
-          <span>Фрагмент схеми</span>
-        </figcaption>
-      </figure>
-
-      <h2>Переваги об’єкта та комерційний потенціал</h2>
-      <ul class="feature-list">
-        <li><strong>Бездоганна юридична історія</strong> — прямий продаж від першого та єдиного власника з 1995 року;
-        </li>
-        <li><strong>Абсолютна приватність</strong> — жодних межових сусідів, ідеально для інтровертів;</li>
-        <li><strong>Простір для діяльності</strong> — ділянка є усамітненою, що забезпечує спокій та свободу
-          для реалізації будь-яких ідей без зайвих обмежень;</li>
-        <li><strong>Розташування та доступ</strong> — окрема приватна дорога веде безпосередньо до ділянок;</li>
-        <li><strong>Електрика</strong> — підведено 3 фази (оформлено підключення за однією з адрес; за другою адресою
-          електрифікації наразі немає, тож є можливість підключити ще одну лінію);</li>
-        <li><strong>Вода</strong> — є свердловина на території;</li>
-        <li><strong>Цільове призначення</strong> — дві ділянки під будівництво, дві для ведення садівництва
-          (+ три сінокоси);</li>
-        <li><strong>Правовий статус</strong> — усі документи на землю в наявності, один власник.</li>
-      </ul>
-
-      <p>
-        Ця локація — ідеальний вибір для тих, хто шукає тихе та затишне місце без міської метушні.
-      </p>
-
-      <h2>Технічні характеристики</h2>
-      <table class="data-table">
-        <tbody>
-          <tr>
-            <td>Локація</td>
-            <td>58 км від Києва, околиця х. Соколі (Березань)</td>
-          </tr>
-          <tr>
-            <td>Відстань до траси</td>
-            <td>1,8 км від траси Київ–Полтава (Київ–Яготин)</td>
-          </tr>
-          <tr>
-            <td>Склад масиву</td>
-            <td>1,2 га (4 ділянки + 3 сінокоси)</td>
-          </tr>
-          <tr>
-            <td>Цільове призначення</td>
-            <td>2 під будівництво, 2 під садівництво (+ 3 сінокоси)</td>
-          </tr>
-          <tr>
-            <td>Власність</td>
-            <td>Перебуває у власності однієї родини з 1995 року</td>
-          </tr>
-          <tr>
-            <td>Електроенергія</td>
-            <td>3 фази підключено (є можливість підключення 3 фаз за 2-ю адресою)</td>
-          </tr>
-          <tr>
-            <td>Водопостачання</td>
-            <td>Свердловина на ділянці</td>
-          </tr>
-          <tr>
-            <td>Дорога / Заїзд</td>
-            <td>Окрема приватна дорога</td>
-          </tr>
-          <tr>
-            <td>Будівлі</td>
-            <td>Тимчасова споруда 59 м² та дві господарчі будівлі</td>
-          </tr>
-          <tr>
-            <td>Проєктне бачення</td>
-            <td>Є концептуальне рішення (дизайн-проєкт)</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2 style="border-top: none; padding-top: 0; margin-top: var(--space-xl);">Огляд та зв'язок</h2>
-      <p>
-        Не втрачайте шансу інвестувати в унікальну локацію з готовим потенціалом для бази відпочинку або прибуткового
-        бізнесу!
-      </p>
-
-      <div class="contact-box">
-        <div class="contact-box-title">Для отримання додаткової інформації зв’яжіться зі мною вже сьогодні</div>
-        <a href="https://telegram.me/+380935896874" class="telegram-btn" target="_blank" rel="noopener">
-          Написати в Telegram: 093 589 68 74
-        </a>
-        <div class="contact-warning">
-          <strong>Важливо:</strong> На дзвінки не відповідаю. Уся додаткова інформація надається за запитом через
-          Телеграм. На фото вказані координати об’єкта — ви можете самостійно оглянути ділянки у будь-який зручний для
-          вас час.
+      <div class="spec-grid">
+        <div class="spec-item">
+          <span class="spec-label">Склад масиву</span>
+          <span class="spec-value">1,2 га (4 діл. + 3 сінокоси)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Відстань від Києва</span>
+          <span class="spec-value">58 км (1,8 км траса)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Електрика</span>
+          <span class="spec-value">3 фази</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Приватність</span>
+          <span class="spec-value">Без межових сусідів</span>
         </div>
       </div>
 
-      <div
-        style="font-size: 10px; color: var(--text-subtle); text-align: center; margin-top: 30px; opacity: 0.15; user-select: none;">
-        Код об'єкта: 714909819
-      </div>
-    </article>
+      <figure class="image-block">
+        <img
+          src="imgs/render.jpg"
+          alt="Унікальний гектар соснового лісу — чиста земля сили 9418"
+          loading="lazy"
+        />
+        <figcaption>
+          <span>Концептуальне бачення заміського комплексу</span>
+          <span>Вид 01</span>
+        </figcaption>
+      </figure>
 
-  </main>
+      <article>
+        <h2>Природа, атмосфера та спокій</h2>
+        <p>
+          Цей <strong>бездоганний</strong> простір — справжній рай для тих, хто
+          шукає спокою, натхнення та єдності з природою. Ділянки розташовані на
+          затишній галявині, повністю оточеній
+          <strong>прадавнім лісовим масивом</strong>, де панує чисте хвойне
+          повітря, що наповнює силами та здоров'ям, тиша та природна енергія —
+          це глибоко <strong>ресурсний</strong> об'єкт і саме те, що шукають
+          гості заміських комплексів або поціновувачі усамітнення.
+        </p>
 
-</body>
+        <p>
+          Поруч протікає чудова мальовнича річка, що додає цьому місцю
+          особливого шарму та відкриває широкі можливості:
+        </p>
+        <ul class="feature-list">
+          <li>Прогулянки вздовж берега та зони природного релаксу;</li>
+          <li>Риболовля чи просто насолода краєвидом на воду;</li>
+          <li>
+            Облаштування власного озера зі своїм рибним господарством (форель,
+            лосось та інше).
+          </li>
+        </ul>
 
+        <figure class="image-block">
+          <img
+            src="imgs/river.jpg"
+            alt="Первозданна природа та мальовнича річка поруч"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Місцева річка поблизу маєтності</span>
+            <span>Природа</span>
+          </figcaption>
+        </figure>
+
+        <blockquote>
+          «Тут можна проводити ретрити, медитуючи під шепіт сосен, відчувати
+          внутрішній баланс та
+          <strong>недоторканний</strong> спокій. Зустрічати мальовничі заходи
+          сонця, насолоджуючись тишею та красою навколишнього світу. Займатися
+          творчістю або іншою діяльністю, яка надихає вас у цьому спокійному та
+          енергетично наповненому місці.»
+        </blockquote>
+
+        <figure class="image-block">
+          <img
+            src="imgs/render2.jpg"
+            alt="Абсолютна приватність і віковий ліс — родова маєтність 1995"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Еко-будинки з інтеграцією в ландшафт</span>
+            <span>Вид 02</span>
+          </figcaption>
+        </figure>
+
+        <h2>Будівлі на ділянці</h2>
+        <p>
+          На ділянці розміщено тимчасову споруду (59 кв. м), а також дві
+          невеликі господарчі будівлі. Основна споруда може бути використана як
+          додаткове бонусне технічне приміщення або, за відсутності потреби, її
+          можна демонтувати.
+        </p>
+
+        <figure class="image-block">
+          <img
+            src="imgs/tempbuilding.jpg"
+            alt="Тимчасова дерев'яна споруда на ділянці"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Тимчасова споруда на території масиву</span>
+            <span>Будівлі</span>
+          </figcaption>
+        </figure>
+
+        <h2>Локація з великим потенціалом для бізнесу або маєтку</h2>
+        <p>
+          Ділянка не має межових сусідів, що гарантує
+          <strong>абсолютну приватність</strong> та відкриває простір для
+          втілення комерційних або приватних планів у відокремленій локації.
+        </p>
+
+        <p><strong>Це ідеальне місце для створення:</strong></p>
+        <ul class="feature-list">
+          <li>
+            <strong>Закритої родової садиби або шляхетної маєтності;</strong>
+          </li>
+          <li>Ретритів, йога- та SPA-програм;</li>
+          <li>Еко-готелю або глемпінгу;</li>
+          <li>Клубного заміського комплексу;</li>
+          <li>Творчих резиденцій або приватної бази відпочинку.</li>
+        </ul>
+
+        <p>
+          Тут легко уявити вечори, милуючись заходом сонця, та гостей, які
+          приїжджають за тишею, природою та повним перезавантаженням.
+        </p>
+
+        <div class="project-box">
+          <h4>Концептуальне рішення (дизайн-проєкт):</h4>
+          <p style="font-size: 0.95rem; margin-bottom: var(--space-xs)">
+            Є розроблене концептуальне дизайнерське бачення розвитку території,
+            яке передбачає:
+          </p>
+          <ul class="feature-list" style="margin: 0">
+            <li>21 будиночок для гостей;</li>
+            <li>Ресторан та бар;</li>
+            <li>SPA-комплекс;</li>
+            <li>Літній кінотеатр.</li>
+          </ul>
+        </div>
+
+        <figure class="image-block">
+          <img
+            src="imgs/interior3d.jpg"
+            alt="Простір для закритої резиденції без сусідів 888"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Концептуальне планування будинку</span>
+            <span>План 3D</span>
+          </figcaption>
+        </figure>
+
+        <figure class="image-block">
+          <img
+            src="imgs/interior.jpg"
+            alt="Інтер'єрне рішення з панорамним видом"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Інтер'єрне рішення для відпочинку з видом на природу</span>
+            <span>Інтер'єр</span>
+          </figcaption>
+        </figure>
+
+        <figure class="image-block">
+          <img
+            src="imgs/planwatercolor.jpg"
+            alt="Акварельна концептуальна схема території"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Концептуальна схема зонування простору (1,2 га)</span>
+            <span>Дизайн-проєкт</span>
+          </figcaption>
+        </figure>
+
+        <figure class="image-block">
+          <img
+            src="imgs/plan_close.jpg"
+            alt="Схема зони відпочинку та SPA"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Концептуальне планування зони відпочинку та SPA</span>
+            <span>Фрагмент схеми</span>
+          </figcaption>
+        </figure>
+
+        <h2>Кадастрові плани та межі</h2>
+        <p>
+          Візуалізація поділу 4-х земельних ділянок та 3-х сінокосів у єдиному
+          масиві понад гектар.
+        </p>
+
+        <div class="gallery-grid">
+          <figure class="image-block">
+            <img
+              src="imgs/map0.jpg"
+              alt="Межі маєтності понад гектар 1995"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="image-block">
+            <img
+              src="imgs/map1.jpg"
+              alt="Кольорова схема зонування земельного наділу"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+
+        <h2>Фотогалерея території</h2>
+        <p>
+          Усамітнена локація без межових сусідів.
+          <strong>Абсолютний земельний суверенітет.</strong>
+        </p>
+
+        <div class="gallery-grid">
+          <figure class="image-block">
+            <img
+              src="imgs/other.jpg"
+              alt="Окрема приватна дорога до маєтку"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="image-block">
+            <img
+              src="imgs/buildingandfence.jpg"
+              alt="Дерев'яна огорожа на території"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="image-block">
+            <img
+              src="imgs/fence1.jpg"
+              alt="Ворота та заїзд на ділянку"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="image-block">
+            <img
+              src="imgs/fence2.jpg"
+              alt="Обитель сили — первозданний ґрунт та природа"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+
+        <h2>Переваги об’єкта та комерційний потенціал</h2>
+        <ul class="feature-list">
+          <li>
+            <strong>Бездоганна юридична історія</strong> — прямий продаж від
+            першого та єдиного власника з 1995 року;
+          </li>
+          <li>
+            <strong>Абсолютна приватність</strong> — жодних межових сусідів,
+            ідеально для інтровертів;
+          </li>
+          <li>
+            <strong>Простір для діяльності</strong> — ділянка є усамітненою, що
+            забезпечує спокій та свободу для реалізації будь-яких ідей без
+            зайвих обмежень;
+          </li>
+          <li>
+            <strong>Розташування та доступ</strong> — окрема приватна дорога
+            веде безпосередньо до ділянок;
+          </li>
+          <li>
+            <strong>Електрика</strong> — підведено 3 фази (оформлено підключення
+            за однією з адрес; за другою адресою електрифікації наразі немає,
+            тож є можливість підключити ще одну лінію);
+          </li>
+          <li><strong>Вода</strong> — є свердловина на території;</li>
+          <li>
+            <strong>Цільове призначення</strong> — дві ділянки під будівництво,
+            дві для ведення садівництва (+ три сінокоси);
+          </li>
+          <li>
+            <strong>Правовий статус</strong> — усі документи на землю в
+            наявності, один власник.
+          </li>
+        </ul>
+
+        <p>
+          Ця локація — ідеальний вибір для тих, хто шукає тихе та затишне місце
+          без міської метушні.
+        </p>
+
+        <h2>Технічні характеристики</h2>
+        <table class="data-table">
+          <tbody>
+            <tr>
+              <td>Локація</td>
+              <td>58 км від Києва, околиця х. Соколі (Березань)</td>
+            </tr>
+            <tr>
+              <td>Відстань до траси</td>
+              <td>1,8 км від траси Київ–Полтава (Київ–Яготин)</td>
+            </tr>
+            <tr>
+              <td>Склад масиву</td>
+              <td>1,2 га (4 ділянки + 3 сінокоси)</td>
+            </tr>
+            <tr>
+              <td>Цільове призначення</td>
+              <td>2 під будівництво, 2 під садівництво (+ 3 сінокоси)</td>
+            </tr>
+            <tr>
+              <td>Власність</td>
+              <td>Перебуває у власності однієї родини з 1995 року</td>
+            </tr>
+            <tr>
+              <td>Електроенергія</td>
+              <td>
+                3 фази підключено (є можливість підключення 3 фаз за 2-ю
+                адресою)
+              </td>
+            </tr>
+            <tr>
+              <td>Водопостачання</td>
+              <td>Свердловина на ділянці</td>
+            </tr>
+            <tr>
+              <td>Дорога / Заїзд</td>
+              <td>Окрема приватна дорога</td>
+            </tr>
+            <tr>
+              <td>Будівлі</td>
+              <td>Тимчасова споруда 59 м² та дві господарчі будівлі</td>
+            </tr>
+            <tr>
+              <td>Проєктне бачення</td>
+              <td>Є концептуальне рішення (дизайн-проєкт)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 style="margin-top: var(--space-xl)">Розташування та маршрут</h2>
+        <p>
+          Зручна та швидка логістика: 46 хвилин від знаку «Київ» по трасі
+          Київ–Полтава.
+        </p>
+
+        <div class="map-widget">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1174.0233340329648!2d31.43465231569282!3d50.29839182945502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDE3JzUzLjIiTiAzMcKwMjYnMDkuMCJF!5e1!3m2!1sen!2s!4v1789661386679!5m2!1sen!2s"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+
+        <div class="map-link-wrapper">
+          <a
+            href="https://maps.app.goo.gl/UpsNbneXMCYLzkvb7"
+            class="map-link"
+            target="_blank"
+            rel="noopener"
+          >
+            📍 Відкрити точну геолокацію в Google Maps
+          </a>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="image-block">
+            <img
+              src="imgs/mapkyiv.jpg"
+              alt="Маршрут зі столиці до ділянки"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="image-block">
+            <img
+              src="imgs/maproad.jpg"
+              alt="Локальний маршрут від Березані до маєтку"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+        <figure class="image-block">
+          <img
+            src="imgs/mapmanual.jpg"
+            alt="Супутниковий знімок під'їзду до ділянки"
+            loading="lazy"
+          />
+        </figure>
+
+        <h2
+          style="border-top: none; padding-top: 0; margin-top: var(--space-xl)"
+        >
+          Огляд та зв'язок
+        </h2>
+        <p>
+          Не втрачайте шансу інвестувати в унікальну локацію з готовим
+          потенціалом для бази відпочинку або прибуткового бізнесу!
+        </p>
+
+        <div class="contact-box">
+          <div class="contact-box-title">
+            Для отримання додаткової інформації зв’яжіться зі мною вже сьогодні
+          </div>
+          <a
+            href="https://telegram.me/+380935896874"
+            class="telegram-btn"
+            target="_blank"
+            rel="noopener"
+          >
+            Написати в Telegram: 093 589 68 74
+          </a>
+          <div class="contact-warning">
+            <strong>Важливо:</strong> На дзвінки не відповідаю. Уся додаткова
+            інформація надається за запитом через Телеграм. Ви можете самостійно
+            оглянути ділянки у будь-який зручний для вас час за вказаними
+            координатами.
+          </div>
+        </div>
+
+        <div
+          style="
+            font-size: 10px;
+            color: var(--text-subtle);
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0.15;
+            user-select: none;
+          "
+        >
+          Код об'єкта: 714909819
+        </div>
+      </article>
+    </main>
+  </body>
 </html>
