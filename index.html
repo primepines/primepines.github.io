@@ -1,96 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="warm-stone">
+<html lang="uk">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Plot 408 — Private Land Offering</title>
-  
+  <title>58 км від Києва — Земельна ділянка 1,2 га в сосновому лісі</title>
+
   <style>
     /* ==========================================================================
-       COLOR PALETTES & THEME CONFIGURATION
-       All design tokens are managed here. You can add or modify themes easily.
+       ПАЛІТРА: RAW SAND (CSS Variables)
        ========================================================================== */
     :root {
-      /* Base Metrics */
-      --font-serif: "Charter", "Bitstream Charter", "Sitka Text", "Cambria", Georgia, serif;
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Consolas", monospace;
-      
-      --spacing-unit: 8px;
-      --space-xs: calc(var(--spacing-unit) * 1);   /* 8px */
-      --space-sm: calc(var(--spacing-unit) * 2);   /* 16px */
-      --space-md: calc(var(--spacing-unit) * 3);   /* 24px */
-      --space-lg: calc(var(--spacing-unit) * 4);   /* 32px */
-      --space-xl: calc(var(--spacing-unit) * 6);   /* 48px */
-      
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 16px;
-      --radius-full: 9999px;
-
-      --container-max-width: 580px; /* Constrained for mobile reading comfort */
-    }
-
-    /* THEME 1: Warm Stone / Architectural Editorial (Default) */
-    html[data-theme="warm-stone"] {
-      --bg-body: #f8f6f2;
-      --bg-surface: #ffffff;
-      --bg-card: #f2efe9;
-      --text-main: #1d1c1a;
-      --text-muted: #6e6b64;
-      --text-subtle: #9c988f;
-      --border-color: #e4e0d7;
-      --accent: #8c5b3e;
-      --accent-contrast: #ffffff;
-      --tag-bg: #ece8df;
-    }
-
-    /* THEME 2: Nordic Minimalist / Crisp Ink */
-    html[data-theme="nordic-ink"] {
-      --bg-body: #fdfdfd;
-      --bg-surface: #ffffff;
-      --bg-card: #f4f5f6;
-      --text-main: #0e1116;
-      --text-muted: #565d68;
-      --text-subtle: #8c939e;
-      --border-color: #e2e4e8;
-      --accent: #2e4a42;
-      --accent-contrast: #ffffff;
-      --tag-bg: #eaedf0;
-    }
-
-    /* THEME 3: High-Contrast Monolith (Dark) */
-    html[data-theme="dark-slate"] {
-      --bg-body: #121314;
-      --bg-surface: #18191b;
-      --bg-card: #202225;
-      --text-main: #eaeaea;
-      --text-muted: #9fa3a9;
-      --text-subtle: #5f646d;
-      --border-color: #2b2e33;
-      --accent: #d2a054;
-      --accent-contrast: #121314;
-      --tag-bg: #26292e;
-    }
-
-    /* THEME 4: Brutalist Raw */
-    html[data-theme="raw-sand"] {
       --bg-body: #ece6dc;
       --bg-surface: #f4eee5;
       --bg-card: #e2dbce;
-      --text-main: #000000;
-      --text-muted: #4a453f;
-      --text-subtle: #797166;
-      --border-color: #000000;
-      --accent: #000000;
-      --accent-contrast: #ffffff;
-      --tag-bg: #00000010;
+      --text-main: #121110;
+      --text-muted: #49453e;
+      --text-subtle: #7a7368;
+      --border-color: #121110;
+      --border-light: rgba(18, 17, 16, 0.18);
+      --accent: #121110;
+      --accent-contrast: #ece6dc;
+
+      --font-base: Georgia, "Times New Roman", Times, serif;
+
+      --spacing-unit: 8px;
+      --space-xs: calc(var(--spacing-unit) * 1);
+      /* 8px */
+      --space-sm: calc(var(--spacing-unit) * 2);
+      /* 16px */
+      --space-md: calc(var(--spacing-unit) * 3);
+      /* 24px */
+      --space-lg: calc(var(--spacing-unit) * 4);
+      /* 32px */
+      --space-xl: calc(var(--spacing-unit) * 6);
+      /* 48px */
+
+      --radius: 2px;
+      --max-width: 620px;
     }
 
     /* ==========================================================================
-       RESET & BASE STYLES
+       БАЗОВЕ СКИДАННЯ ТА СТИЛІ
        ========================================================================== */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -99,150 +54,169 @@
 
     html {
       font-size: 16px;
-      scroll-behavior: smooth;
       background-color: var(--bg-body);
       color: var(--text-main);
-      font-family: var(--font-serif);
-      transition: background-color 0.25s ease, color 0.25s ease;
+      font-family: var(--font-base);
+      scroll-behavior: smooth;
     }
 
     body {
-      line-height: 1.65;
+      line-height: 1.62;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 120px; /* Room for bottom mobile action bar */
+      padding: var(--space-md) 0 var(--space-xl);
     }
 
-    /* Typography & Hierarchy */
-    h1, h2, h3, h4 {
-      color: var(--text-main);
-      font-family: var(--font-serif);
-      font-weight: 400;
-      letter-spacing: -0.015em;
-      line-height: 1.25;
-    }
-
-    h1 { font-size: clamp(2rem, 6vw, 2.75rem); }
-    h2 { font-size: clamp(1.4rem, 4.5vw, 1.8rem); margin-bottom: var(--space-sm); }
-    h3 { font-size: 1.15rem; font-family: var(--font-sans); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-xs); }
-    
-    p {
-      margin-bottom: var(--space-md);
-      font-size: 1.0625rem;
-      color: var(--text-main);
-    }
-
-    p.lead {
-      font-size: 1.25rem;
-      line-height: 1.5;
-      color: var(--text-muted);
-    }
-
-    .meta-sans {
-      font-family: var(--font-sans);
-      font-size: 0.8125rem;
-      letter-spacing: 0.02em;
-    }
-
-    .mono {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-    }
-
-    /* Main Container Structure */
     .viewport {
       width: 100%;
-      max-width: var(--container-max-width);
+      max-width: var(--max-width);
       padding: 0 var(--space-md);
     }
 
     /* ==========================================================================
-       HEADER & NAVIGATION
+       ТИПОГРАФІКА
        ========================================================================== */
-    header {
-      width: 100%;
-      border-bottom: 1px solid var(--border-color);
-      padding: var(--space-sm) 0;
-      position: sticky;
-      top: 0;
-      background: var(--bg-body);
-      backdrop-filter: blur(8px);
-      z-index: 100;
-      transition: background-color 0.25s, border-color 0.25s;
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-base);
+      font-weight: normal;
+      color: var(--text-main);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
     }
 
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    h1 {
+      font-size: clamp(1.85rem, 6.2vw, 2.45rem);
+      margin-top: var(--space-xs);
+      margin-bottom: var(--space-sm);
     }
 
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      background: var(--tag-bg);
-      border-radius: var(--radius-full);
-      color: var(--text-muted);
-      font-weight: 500;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+    h2 {
+      font-size: clamp(1.3rem, 4.8vw, 1.6rem);
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-sm);
+      border-top: 1px solid var(--border-color);
+      padding-top: var(--space-md);
     }
 
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: #22c55e; /* Static active status indicator */
-    }
-
-    /* Palette Tester Control */
-    .theme-selector {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--tag-bg);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 2px 6px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .theme-selector select {
-      border: none;
-      background: transparent;
-      color: inherit;
-      font-family: inherit;
-      font-size: inherit;
-      outline: none;
-      cursor: pointer;
-    }
-
-    /* ==========================================================================
-       HERO & SPECS BAR
-       ========================================================================== */
-    .hero {
-      padding: var(--space-xl) 0 var(--space-lg);
-    }
-
-    .hero-meta {
-      color: var(--text-subtle);
+    h3 {
+      font-size: 1.15rem;
+      margin-top: var(--space-md);
       margin-bottom: var(--space-xs);
+      font-style: italic;
+    }
+
+    p {
+      margin-bottom: var(--space-md);
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+
+    p.lead {
+      font-size: 1.18rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: var(--space-md);
+    }
+
+    .meta-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
       display: block;
     }
 
-    .price-tag {
-      font-size: 1.75rem;
-      font-family: var(--font-sans);
-      font-weight: 400;
-      color: var(--accent);
-      margin-top: var(--space-sm);
+    blockquote {
+      border-left: 2px solid var(--border-color);
+      padding: var(--space-xs) 0 var(--space-xs) var(--space-md);
+      margin: var(--space-md) 0 var(--space-lg);
+      font-style: italic;
+      color: var(--text-main);
+      font-size: 1.1rem;
+    }
+
+    /* ==========================================================================
+       КОНТАКТНІ БЛОКИ TELEGRAM (ВЕРХ ТА НИЗ)
+       ========================================================================== */
+    .contact-box {
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-surface);
+      padding: var(--space-md);
+      margin: var(--space-md) 0 var(--space-lg);
+    }
+
+    .contact-box-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-subtle);
+      margin-bottom: var(--space-xs);
+    }
+
+    .telegram-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-sm);
+    }
+
+    .telegram-btn {
+      display: block;
+      width: 100%;
+      background-color: var(--accent);
+      color: var(--accent-contrast);
+      text-align: center;
+      padding: 13px var(--space-sm);
+      text-decoration: none;
+      font-family: var(--font-base);
+      font-size: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+    }
+
+    .telegram-btn.secondary {
+      background-color: transparent;
+      color: var(--text-main);
+    }
+
+    .telegram-btn:active {
+      opacity: 0.8;
+    }
+
+    .contact-warning {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      border-top: 1px dashed var(--border-light);
+      padding-top: var(--space-xs);
+    }
+
+    /* ==========================================================================
+       БЛОК ЦІНИ ТА ХАРАКТЕРИСТИК
+       ========================================================================== */
+    .price-card {
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-surface);
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .price-num {
+      font-size: 2.2rem;
+      line-height: 1.1;
+      margin: var(--space-xs) 0;
+    }
+
+    .price-details {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      border-top: 1px dashed var(--border-light);
+      padding-top: var(--space-xs);
     }
 
     .spec-grid {
@@ -251,421 +225,375 @@
       gap: 1px;
       background-color: var(--border-color);
       border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      margin: var(--space-lg) 0;
+      margin-bottom: var(--space-lg);
     }
 
     .spec-item {
       background-color: var(--bg-surface);
       padding: var(--space-sm);
-      display: flex;
-      flex-direction: column;
     }
 
     .spec-label {
-      color: var(--text-subtle);
+      display: block;
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 2px;
+      color: var(--text-subtle);
+      margin-bottom: 3px;
     }
 
     .spec-value {
-      font-family: var(--font-sans);
       font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--text-main);
     }
 
     /* ==========================================================================
-       EDITORIAL CONTENT & MEDIA
+       СПИСКИ ТА ТАБЛИЦІ
        ========================================================================== */
-    .section-divider {
-      height: 1px;
-      background: var(--border-color);
-      margin: var(--space-xl) 0;
-      border: 0;
-    }
-
-    .editorial-block {
-      margin-bottom: var(--space-lg);
-    }
-
-    /* Minimal Image Placeholders */
-    .media-card {
-      margin: var(--space-lg) 0;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-    }
-
-    .image-frame {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      position: relative;
-      background-color: var(--bg-card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .image-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* SVG Placeholder graphics */
-    .placeholder-svg {
-      width: 100%;
-      height: 100%;
-      stroke: var(--text-subtle);
-      fill: none;
-      stroke-width: 0.75;
-      opacity: 0.4;
-    }
-
-    figcaption {
-      padding: var(--space-xs) var(--space-sm);
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border-color);
-      background-color: var(--bg-surface);
-      font-family: var(--font-sans);
-      display: flex;
-      justify-content: space-between;
-    }
-
-    /* Detailed Breakdown Lists */
-    .detail-list {
+    .feature-list {
       list-style: none;
       margin: var(--space-md) 0;
     }
 
-    .detail-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: var(--space-xs) 0;
-      border-bottom: 1px dashed var(--border-color);
-      font-size: 0.9375rem;
+    .feature-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: var(--space-xs);
+      font-size: 1rem;
     }
 
-    .detail-list li span:first-child {
+    .feature-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
       color: var(--text-muted);
     }
 
-    .detail-list li span:last-child {
-      font-family: var(--font-mono);
-      color: var(--text-main);
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-md) 0;
+    }
+
+    .data-table tr {
+      border-bottom: 1px dashed var(--border-light);
+    }
+
+    .data-table td {
+      padding: var(--space-xs) 0;
+      font-size: 0.95rem;
+    }
+
+    .data-table td:last-child {
       text-align: right;
     }
 
-    /* Pullquote */
-    blockquote {
-      border-left: 2px solid var(--accent);
-      padding-left: var(--space-md);
-      margin: var(--space-lg) 0;
-      font-style: italic;
-      color: var(--text-main);
-      font-size: 1.15rem;
+    .data-table td:first-child {
+      color: var(--text-muted);
     }
 
     /* ==========================================================================
-       BOTTOM FIXED ACTION BAR (PHONE-OPTIMIZED)
+       ЗОБРАЖЕННЯ
        ========================================================================== */
-    .action-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border-color);
-      padding: var(--space-sm) var(--space-md);
-      display: flex;
-      justify-content: center;
-      z-index: 999;
-      box-shadow: 0 -4px 16px rgba(0,0,0,0.03);
-      padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom));
-    }
-
-    .action-bar-inner {
-      width: 100%;
-      max-width: var(--container-max-width);
-      display: flex;
-      gap: var(--space-sm);
-    }
-
-    .btn {
-      flex: 1;
-      padding: 14px var(--space-md);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-sans);
-      font-size: 0.9375rem;
-      font-weight: 500;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: opacity 0.15s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn:active {
-      opacity: 0.8;
-    }
-
-    .btn-primary {
-      background-color: var(--accent);
-      color: var(--accent-contrast);
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      border-color: var(--border-color);
-      color: var(--text-main);
-    }
-
-    /* Modal Sheet for Contact Info */
-    .modal {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 1000;
-      display: none;
-      align-items: flex-end;
-      justify-content: center;
-      backdrop-filter: blur(2px);
-    }
-
-    .modal.open {
-      display: flex;
-    }
-
-    .modal-sheet {
+    .image-block {
+      margin: var(--space-lg) 0;
+      border: 1px solid var(--border-color);
       background-color: var(--bg-surface);
-      width: 100%;
-      max-width: var(--container-max-width);
-      border-top-left-radius: var(--radius-lg);
-      border-top-right-radius: var(--radius-lg);
-      padding: var(--space-lg) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom));
-      box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
-      animation: slideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    @keyframes slideUp {
-      from { transform: translateY(100%); }
-      to { transform: translateY(0); }
+    .image-block img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-card);
+    }
+
+    .image-block figcaption {
+      padding: var(--space-xs) var(--space-sm);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      background-color: var(--bg-surface);
+    }
+
+    .project-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: var(--space-md);
+      margin: var(--space-md) 0 var(--space-lg);
+    }
+
+    .project-box h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-xs);
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Top Global Header -->
-  <header>
-    <div class="viewport nav-content">
-      <div class="status-pill meta-sans">
-        <span class="status-dot"></span> Available
-      </div>
-
-      <!-- Live Theme Switcher to easily test variations -->
-      <div class="theme-selector">
-        <span>Palette:</span>
-        <select id="themePicker" aria-label="Switch Theme Palette">
-          <option value="warm-stone" selected>Warm Stone</option>
-          <option value="nordic-ink">Nordic Ink</option>
-          <option value="dark-slate">Dark Slate</option>
-          <option value="raw-sand">Raw Sand</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Showcase Container -->
   <main class="viewport">
 
-    <!-- Hero / Header Details -->
-    <section class="hero">
-      <span class="hero-meta meta-sans">Cadastral Ref. 842-B · Valais Uplands</span>
-      <h1>Parcel 408 / Wild Meadow</h1>
-      <div class="price-tag">€ 385,000</div>
+    <!-- ЗАГОЛОВОК ТА ВСТУП -->
+    <section>
+      <span class="meta-tag">58 км від Києва · 1,8 км від траси Київ-Полтава</span>
+      <h1>58км від Києва, велика земельна ділянка в сосновому лісі – під будь-який вид діяльності!</h1>
+
+      <p class="lead">
+        Відчуйте справжню насолоду серед природи! Усього за 58 км від Києва, за 1,8 км від траси Київ–Полтава
+        (Київ–Яготин), на околиці хутора Соколі (колишній Баришівський район), на виїзді з міста Березань, на вас чекає
+        унікальний об’єкт, який складається з двох земельних ділянок та має дві окремі адреси. Загальна площа — 1,2 га.
+      </p>
+
+      <!-- БЛОК ЦІНИ -->
+      <div class="price-card">
+        <span class="meta-tag">Вартість об'єкта</span>
+        <div class="price-num">55 000 $</div>
+        <div class="price-details">
+          За весь об’єкт (2 ділянки, 1,2 га з окремими адресами).<br />
+          Можливий продаж кожної ділянки окремо — <strong>40 000 $</strong> за одну ділянку.
+        </div>
+      </div>
+
+      <!-- ВЕРХНІЙ КОНТАКТНИЙ БЛОК TELEGRAM -->
+      <div class="contact-box">
+        <div class="contact-box-title">Зв’яжіться зі мною вже сьогодні</div>
+        <div class="telegram-btn-group">
+          <a href="https://t.me/+380935896874" class="telegram-btn" target="_blank" rel="noopener">
+            Написати в Telegram: 093 589 68 74
+          </a>
+          <a href="https://t.me/+380734883075" class="telegram-btn secondary" target="_blank" rel="noopener">
+            Telegram (резервний): 073 488 30 75
+          </a>
+        </div>
+        <div class="contact-warning">
+          <strong>Зверніть увагу:</strong> На дзвінки не відповідаю. Уся додаткова інформація надається за запитом через
+          Телеграм. На фото є координати об'єкту, і ви можете самостійно, в будь-який зручний для вас час подивитися
+          ділянки.
+        </div>
+      </div>
     </section>
 
-    <!-- Key Metrics Grid -->
+    <!-- ОСНОВНІ ПАРАМЕТРИ -->
     <div class="spec-grid">
       <div class="spec-item">
-        <span class="spec-label meta-sans">Surface Area</span>
-        <span class="spec-value">12,450 m²</span>
+        <span class="spec-label">Загальна площа</span>
+        <span class="spec-value">1,2 га (2 адреси)</span>
       </div>
       <div class="spec-item">
-        <span class="spec-label meta-sans">Zoning Type</span>
-        <span class="spec-value">R-1 Low Density</span>
+        <span class="spec-label">Відстань від Києва</span>
+        <span class="spec-value">58 км (1,8 км траса)</span>
       </div>
       <div class="spec-item">
-        <span class="spec-label meta-sans">Elevation</span>
-        <span class="spec-value">640 m AMSL</span>
+        <span class="spec-label">Електрика</span>
+        <span class="spec-value">3 фази (проведена)</span>
       </div>
       <div class="spec-item">
-        <span class="spec-label meta-sans">Solar Exposure</span>
-        <span class="spec-value">South-Southwest</span>
+        <span class="spec-label">Сусіди</span>
+        <span class="spec-value">Повна приватність (0)</span>
       </div>
     </div>
 
-    <!-- Editorial Narrative -->
+    <!-- КАРТИНКА 1: ГОЛОВНИЙ РЕНДЕР КОМПЛЕКСУ -->
+    <figure class="image-block">
+      <img src="imgs/render.jpg" alt="Візуалізація комплексу в сосновому лісі" loading="eager" />
+      <figcaption>
+        <span>Концепція заміського комплексу серед природи</span>
+        <span>Вид 01</span>
+      </figcaption>
+    </figure>
+
+    <!-- ПРИРОДА ТА АТМОСФЕРА -->
     <article>
-      <p class="lead">
-        A continuous, gently sloping parcel situated along the western ridge of the plateau, offering unobstructed views over the valley and direct private road access.
+      <h2>Природа, атмосфера та спокій</h2>
+      <p>
+        Це місце — справжній рай для тих, хто шукає спокою, натхнення та єдності з природою. Ділянки розташовані на
+        затишній галявині, повністю оточеній сосновим лісом, де панує чисте лісове повітря, яке наповнює силами та
+        здоров'ям, тиша та природна енергія — саме те, що шукають гості заміських комплексів або поціновувачі
+        усамітнення.
       </p>
 
       <p>
-        The land features mature native oak stands along its northern boundary, acting as a natural windbreak, while the central clearings remain bathed in sunlight throughout the day. It has remained fallow and free of chemical intervention for over three decades, preserving natural soil biome and drainage capacity.
+        Поруч протікає чудова мальовнича річка, що додає цьому місцю особливого шарму та відкриває широкі можливості:
       </p>
-
-      <!-- Visual Placeholder 1: Contour / Plot Layout -->
-      <figure class="media-card">
-        <div class="image-frame">
-          <!-- Geometric Topography Placeholder (Replace with <img src="...">) -->
-          <svg class="placeholder-svg" viewBox="0 0 400 300">
-            <path d="M 0,200 Q 100,160 200,210 T 400,180" />
-            <path d="M 0,160 Q 120,130 220,170 T 400,140" />
-            <path d="M 0,120 Q 140,100 240,130 T 400,100" />
-            <polygon points="120,90 280,110 240,240 80,220" stroke="currentColor" stroke-dasharray="4" fill="currentColor" fill-opacity="0.05" />
-            <circle cx="200" cy="150" r="3" fill="currentColor"/>
-            <text x="210" y="153" font-size="10" font-family="monospace" fill="currentColor">12,450 m² BOUNDARY</text>
-          </svg>
-        </div>
-        <figcaption>
-          <span>Topographic Boundary Diagram</span>
-          <span class="mono">Fig. 01</span>
-        </figcaption>
-      </figure>
-
-      <h2>Topography & Terrain</h2>
-      <p>
-        The site naturally splits into three natural terraces. The upper tier provides optimal structural ground for construction on bedrock, while the lower two tiers retain deep topsoil suitable for private orchards, gardens, or unbuilt recreation buffer zones.
-      </p>
+      <ul class="feature-list">
+        <li>Прогулянки вздовж берега та зони природного релаксу;</li>
+        <li>Риболовля чи просто насолода видом на воду;</li>
+        <li>Організація власного озера з рибним господарством (форель, лосось та інше).</li>
+      </ul>
 
       <blockquote>
-        “An undisturbed pocket of land where architectural privacy meets total climatic exposure.”
+        «Тут можна проводити ретріти, медитуючи під шепіт сосен, відчувати внутрішній баланс. Зустрічати мальовничі
+        заходи сонця, насолоджуючись тишею та красою навколишнього світу. Займатись творчістю або іншою діяльністю, яка
+        надихає вас у цьому спокійному та енергетично наповненому місці.»
       </blockquote>
 
-      <h2>Infrastructure & Utilities</h2>
-      <p>
-        Unlike remote off-grid tracts, Parcel 408 is fully prepared at boundary level for connection to municipal systems without requiring right-of-way negotiations:
-      </p>
-
-      <ul class="detail-list">
-        <li><span>Access Road</span> <span>Paved Asphalt (6m wide)</span></li>
-        <li><span>Electrical Grid</span> <span>Low-voltage at boundary</span></li>
-        <li><span>Potable Water</span> <span>Municipal line connection</span></li>
-        <li><span>Sewage / Drainage</span> <span>Individual septic mandated</span></li>
-        <li><span>Telecommunications</span> <span>Fiber-optic conduit ready</span></li>
-      </ul>
-
-      <!-- Visual Placeholder 2: Horizon View -->
-      <figure class="media-card">
-        <div class="image-frame">
-          <svg class="placeholder-svg" viewBox="0 0 400 300">
-            <line x1="0" y1="210" x2="400" y2="210" />
-            <polygon points="40,210 110,120 180,210" />
-            <polygon points="150,210 240,90 330,210" />
-            <polygon points="280,210 340,150 400,210" />
-            <circle cx="310" cy="70" r="20" stroke-width="0.5" />
-          </svg>
-        </div>
+      <!-- КАРТИНКА 2: РЕНДЕР АРХІТЕКТУРИ -->
+      <figure class="image-block">
+        <img src="imgs/render2.jpg" alt="Архітектурне рішення будинків із зеленими дахами" loading="lazy" />
         <figcaption>
-          <span>South-West Valley Sightline</span>
-          <span class="mono">Fig. 02</span>
+          <span>Еко-будинки з інтеграцією в ландшафт</span>
+          <span>Вид 02</span>
         </figcaption>
       </figure>
 
-      <h2>Planning Potential & Legal Status</h2>
+      <!-- БУДІВЛЯ НА ДІЛЯНЦІ (ЧИСТИЙ ТЕКСТ БЕЗ ФОТО) -->
+      <h2>Будівля на ділянці</h2>
       <p>
-        Classified under residential low-density development ordinance. Permitted constructible footprint allows for a single primary residence up to 350 m² of usable floor space across two levels, plus detached outbuildings. Freehold title is clean, unencumbered by easements or third-party rights.
+        На ділянці розміщено мобільний будинок площею <strong>54–59 кв. м</strong>, який може бути
+        вивезений/демонтований, або може бути придбаний за додаткову оплату (ціна обговорюється), або використаний як
+        подарунковий бонус під офіс чи інше призначення.
       </p>
 
-      <hr class="section-divider" />
+      <!-- БІЗНЕС ТА ПРОЄКТ -->
+      <h2>Локація з великим потенціалом для бізнесу або бази відпочинку</h2>
+      <p>
+        Ви можете розмістити свій власний бізнес: ділянка без сусідів, а отже ваш вид діяльності не потребує жодних
+        сторонніх узгоджень. Це вже підготовлена платформа для швидкого старту бізнесу або масштабного інвестиційного
+        проєкту.
+      </p>
 
-      <!-- Cadastral Specifications Table -->
-      <h3>Cadastral Data</h3>
-      <ul class="detail-list">
-        <li><span>Municipality</span> <span>Saint-Luc (VS)</span></li>
-        <li><span>Section / Sheet</span> <span>A / 04</span></li>
-        <li><span>Coordinates</span> <span id="coords">46.2214° N, 7.6180° E</span></li>
-        <li><span>Property Tax (Est.)</span> <span>€ 1,120 / year</span></li>
+      <p><strong>Це ідеальне місце для:</strong></p>
+      <ul class="feature-list">
+        <li>Ретритів, йога- та SPA-програм;</li>
+        <li>Еко-готелю або глемпінгу;</li>
+        <li>Клубного заміського комплексу;</li>
+        <li>Творчих резиденцій або приватної бази відпочинку.</li>
       </ul>
+
+      <p>
+        Тут легко уявити вечори з видом на захід сонця та гостей, які приїжджають за тишею, природою та повним
+        перезавантаженням.
+      </p>
+
+      <!-- ГОТОВИЙ ПРОЄКТ ТА ВІЗУАЛІЗАЦІЇ КОНЦЕПЦІЇ -->
+      <div class="project-box">
+        <h4>Готовий проєкт комплексу включає:</h4>
+        <ul class="feature-list" style="margin: var(--space-xs) 0 0;">
+          <li>21 будинок для гостей;</li>
+          <li>Ресторан та бар;</li>
+          <li>SPA-комплекс;</li>
+          <li>Літній кінотеатр.</li>
+        </ul>
+      </div>
+
+      <!-- КАРТИНКА 3: 3D-ПЛАНУВАННЯ БУДИНКУ (ПЕРЕНЕСЕНО СЮДИ) -->
+      <figure class="image-block">
+        <img src="imgs/interior3d.jpg" alt="3D планування модульного будинку для гостей" loading="lazy" />
+        <figcaption>
+          <span>Концепт планування гостьового будинку з терасою</span>
+          <span>План 3D</span>
+        </figcaption>
+      </figure>
+
+      <!-- КАРТИНКА 4: ІНТЕР'ЄР (ПЕРЕНЕСЕНО СЮДИ) -->
+      <figure class="image-block">
+        <img src="imgs/interior.jpg" alt="Інтер'єр із панорамним видом" loading="lazy" />
+        <figcaption>
+          <span>Інтер'єрне рішення з видом на ліс та водойму</span>
+          <span>Інтер'єр</span>
+        </figcaption>
+      </figure>
+
+      <!-- КАРТИНКА 5: АКВАРЕЛЬНИЙ ГЕНПЛАН -->
+      <figure class="image-block">
+        <img src="imgs/planwatercolor.jpg" alt="Акварельний генеральний план території" loading="lazy" />
+        <figcaption>
+          <span>Генеральний план розвитку території (1,2 га)</span>
+          <span>Генплан</span>
+        </figcaption>
+      </figure>
+
+      <!-- КАРТИНКА 6: ДЕТАЛІЗОВАНИЙ ПЛАН СПА ТА ВОДОЙМИ -->
+      <figure class="image-block">
+        <img src="imgs/plan_close.jpg" alt="План зони басейну та SPA" loading="lazy" />
+        <figcaption>
+          <span>Зона відпочинку, SPA та водойми</span>
+          <span>Деталь плану</span>
+        </figcaption>
+      </figure>
+
+      <!-- ПЕРЕВАГИ -->
+      <h2>Переваги об’єкта та комерційні переваги</h2>
+      <ul class="feature-list">
+        <li><strong>Повна приватність</strong> — немає сусідів, ідеально для інтровертів;</li>
+        <li><strong>Свобода дій</strong> — можливість ведення будь-якої діяльності без погоджень із сусідами;</li>
+        <li><strong>Під'їзд</strong> — окрема особиста під’їзна дорога до ділянок;</li>
+        <li><strong>Комунікації</strong> — проведена електрика (3 фази / 3 фази+) та підведена вода;</li>
+        <li><strong>Юридична чистота</strong> — усі документи на землю в наявності, цільове призначення — під забудову,
+          одна власниця;</li>
+        <li><strong>Дозволи</strong> — є всі дозволи на будівництво будинку / офісу+.</li>
+      </ul>
+
+      <p>
+        Це місце — ідеальний вибір для тих, хто шукає тихе та затишне місце без міської метушні.
+      </p>
+
+      <!-- ТЕХНІЧНА ТАБЛИЦЯ -->
+      <h2>Технічна таблиця об’єкта</h2>
+      <table class="data-table">
+        <tbody>
+          <tr>
+            <td>Локація</td>
+            <td>58 км від Києва, околиця х. Соколі (Березань)</td>
+          </tr>
+          <tr>
+            <td>Відстань до траси</td>
+            <td>1,8 км від траси Київ–Полтава (Київ–Яготин)</td>
+          </tr>
+          <tr>
+            <td>Площа</td>
+            <td>1,2 га (дві окремі ділянки з двома адресами)</td>
+          </tr>
+          <tr>
+            <td>Цільове призначення</td>
+            <td>Під забудову (наявні всі документи та дозволи)</td>
+          </tr>
+          <tr>
+            <td>Власність</td>
+            <td>Одна власниця</td>
+          </tr>
+          <tr>
+            <td>Електрика / Вода</td>
+            <td>3 фази підведено / вода на території</td>
+          </tr>
+          <tr>
+            <td>Будинок на ділянці</td>
+            <td>54–59 кв. м (демонтаж або бонус під офіс)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- НИЖНІЙ КОНТАКТНИЙ БЛОК TELEGRAM -->
+      <h2 style="border-top: none; padding-top: 0; margin-top: var(--space-xl);">Огляд та зв'язок</h2>
+      <p>
+        Не втрачайте шанс стати власником цього унікального куточка природи та інвестувати в локацію з готовим
+        потенціалом для прибуткового бізнесу чи власного життя!
+      </p>
+
+      <div class="contact-box">
+        <div class="contact-box-title">Зв’яжіться зі мною вже сьогодні</div>
+        <div class="telegram-btn-group">
+          <a href="https://t.me/+380935896874" class="telegram-btn" target="_blank" rel="noopener">
+            Написати в Telegram: 093 589 68 74
+          </a>
+          <a href="https://t.me/+380734883075" class="telegram-btn secondary" target="_blank" rel="noopener">
+            Telegram (резервний): 073 488 30 75
+          </a>
+        </div>
+        <div class="contact-warning">
+          <strong>Важливо:</strong> На дзвінки не відповідаю. Уся додаткова інформація надається за запитом через
+          Телеграм. На фото вказані координати об’єкта — ви можете самостійно оглянути ділянки у будь-який зручний для
+          вас час.
+        </div>
+      </div>
     </article>
+
   </main>
 
-  <!-- Phone-First Bottom Sticky Bar -->
-  <aside class="action-bar">
-    <div class="action-bar-inner">
-      <button class="btn btn-secondary" onclick="copyCoordinates()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        Copy Coords
-      </button>
-      <button class="btn btn-primary" onclick="toggleModal(true)">
-        Inquire / Dossier
-      </button>
-    </div>
-  </aside>
-
-  <!-- Clean Inquiry Modal Sheet -->
-  <div class="modal" id="inquiryModal" onclick="handleBackdropClick(event)">
-    <div class="modal-sheet">
-      <h2>Direct Inquiries</h2>
-      <p class="meta-sans" style="color: var(--text-muted); margin-bottom: var(--space-md);">
-        Direct representation by the owner. Complete cadastral surveys, soil assessment reports, and title records are available upon request.
-      </p>
-      
-      <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
-        <a href="mailto:estate@parcel408.internal?subject=Inquiry:%20Parcel%20408" class="btn btn-primary">
-          Send Email Inquiry
-        </a>
-        <a href="tel:+41000000000" class="btn btn-secondary">
-          Direct Line: +41 00 000 000
-        </a>
-        <button class="btn" style="background: transparent; color: var(--text-subtle); margin-top: var(--space-xs);" onclick="toggleModal(false)">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Micro Interaction Scripts -->
-  <script>
-    // Theme Switcher Logic
-    const themePicker = document.getElementById('themePicker');
-    themePicker.addEventListener('change', (e) => {
-      document.documentElement.setAttribute('data-theme', e.target.value);
-    });
-
-    // Modal Sheet Handlers
-    function toggleModal(show) {
-      const modal = document.getElementById('inquiryModal');
-      modal.classList.toggle('open', show);
-      document.body.style.overflow = show ? 'hidden' : '';
-    }
-
-    function handleBackdropClick(e) {
-      if (e.target.id === 'inquiryModal') {
-        toggleModal(false);
-      }
-    }
-
-    // Coordinates Copy Helper
-    function copyCoordinates() {
-      const coords = document.getElementById('coords').innerText;
-      navigator.clipboard.writeText(coords).then(() => {
-        alert('Coordinates copied to clipboard: ' + coords);
-      });
-    }
-  </script>
 </body>
+
 </html>
