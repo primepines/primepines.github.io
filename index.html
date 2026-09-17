@@ -1,1 +1,671 @@
-Hello world from primepines!
+<!DOCTYPE html>
+<html lang="en" data-theme="warm-stone">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Plot 408 — Private Land Offering</title>
+  
+  <style>
+    /* ==========================================================================
+       COLOR PALETTES & THEME CONFIGURATION
+       All design tokens are managed here. You can add or modify themes easily.
+       ========================================================================== */
+    :root {
+      /* Base Metrics */
+      --font-serif: "Charter", "Bitstream Charter", "Sitka Text", "Cambria", Georgia, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Consolas", monospace;
+      
+      --spacing-unit: 8px;
+      --space-xs: calc(var(--spacing-unit) * 1);   /* 8px */
+      --space-sm: calc(var(--spacing-unit) * 2);   /* 16px */
+      --space-md: calc(var(--spacing-unit) * 3);   /* 24px */
+      --space-lg: calc(var(--spacing-unit) * 4);   /* 32px */
+      --space-xl: calc(var(--spacing-unit) * 6);   /* 48px */
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+
+      --container-max-width: 580px; /* Constrained for mobile reading comfort */
+    }
+
+    /* THEME 1: Warm Stone / Architectural Editorial (Default) */
+    html[data-theme="warm-stone"] {
+      --bg-body: #f8f6f2;
+      --bg-surface: #ffffff;
+      --bg-card: #f2efe9;
+      --text-main: #1d1c1a;
+      --text-muted: #6e6b64;
+      --text-subtle: #9c988f;
+      --border-color: #e4e0d7;
+      --accent: #8c5b3e;
+      --accent-contrast: #ffffff;
+      --tag-bg: #ece8df;
+    }
+
+    /* THEME 2: Nordic Minimalist / Crisp Ink */
+    html[data-theme="nordic-ink"] {
+      --bg-body: #fdfdfd;
+      --bg-surface: #ffffff;
+      --bg-card: #f4f5f6;
+      --text-main: #0e1116;
+      --text-muted: #565d68;
+      --text-subtle: #8c939e;
+      --border-color: #e2e4e8;
+      --accent: #2e4a42;
+      --accent-contrast: #ffffff;
+      --tag-bg: #eaedf0;
+    }
+
+    /* THEME 3: High-Contrast Monolith (Dark) */
+    html[data-theme="dark-slate"] {
+      --bg-body: #121314;
+      --bg-surface: #18191b;
+      --bg-card: #202225;
+      --text-main: #eaeaea;
+      --text-muted: #9fa3a9;
+      --text-subtle: #5f646d;
+      --border-color: #2b2e33;
+      --accent: #d2a054;
+      --accent-contrast: #121314;
+      --tag-bg: #26292e;
+    }
+
+    /* THEME 4: Brutalist Raw */
+    html[data-theme="raw-sand"] {
+      --bg-body: #ece6dc;
+      --bg-surface: #f4eee5;
+      --bg-card: #e2dbce;
+      --text-main: #000000;
+      --text-muted: #4a453f;
+      --text-subtle: #797166;
+      --border-color: #000000;
+      --accent: #000000;
+      --accent-contrast: #ffffff;
+      --tag-bg: #00000010;
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      font-family: var(--font-serif);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    body {
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 120px; /* Room for bottom mobile action bar */
+    }
+
+    /* Typography & Hierarchy */
+    h1, h2, h3, h4 {
+      color: var(--text-main);
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+    }
+
+    h1 { font-size: clamp(2rem, 6vw, 2.75rem); }
+    h2 { font-size: clamp(1.4rem, 4.5vw, 1.8rem); margin-bottom: var(--space-sm); }
+    h3 { font-size: 1.15rem; font-family: var(--font-sans); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-xs); }
+    
+    p {
+      margin-bottom: var(--space-md);
+      font-size: 1.0625rem;
+      color: var(--text-main);
+    }
+
+    p.lead {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    .meta-sans {
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      letter-spacing: 0.02em;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    /* Main Container Structure */
+    .viewport {
+      width: 100%;
+      max-width: var(--container-max-width);
+      padding: 0 var(--space-md);
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== */
+    header {
+      width: 100%;
+      border-bottom: 1px solid var(--border-color);
+      padding: var(--space-sm) 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg-body);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      transition: background-color 0.25s, border-color 0.25s;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: var(--tag-bg);
+      border-radius: var(--radius-full);
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #22c55e; /* Static active status indicator */
+    }
+
+    /* Palette Tester Control */
+    .theme-selector {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--tag-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 2px 6px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .theme-selector select {
+      border: none;
+      background: transparent;
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO & SPECS BAR
+       ========================================================================== */
+    .hero {
+      padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .hero-meta {
+      color: var(--text-subtle);
+      margin-bottom: var(--space-xs);
+      display: block;
+    }
+
+    .price-tag {
+      font-size: 1.75rem;
+      font-family: var(--font-sans);
+      font-weight: 400;
+      color: var(--accent);
+      margin-top: var(--space-sm);
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background-color: var(--border-color);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin: var(--space-lg) 0;
+    }
+
+    .spec-item {
+      background-color: var(--bg-surface);
+      padding: var(--space-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spec-label {
+      color: var(--text-subtle);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .spec-value {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       EDITORIAL CONTENT & MEDIA
+       ========================================================================== */
+    .section-divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: var(--space-xl) 0;
+      border: 0;
+    }
+
+    .editorial-block {
+      margin-bottom: var(--space-lg);
+    }
+
+    /* Minimal Image Placeholders */
+    .media-card {
+      margin: var(--space-lg) 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+    }
+
+    .image-frame {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      position: relative;
+      background-color: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* SVG Placeholder graphics */
+    .placeholder-svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--text-subtle);
+      fill: none;
+      stroke-width: 0.75;
+      opacity: 0.4;
+    }
+
+    figcaption {
+      padding: var(--space-xs) var(--space-sm);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      background-color: var(--bg-surface);
+      font-family: var(--font-sans);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Detailed Breakdown Lists */
+    .detail-list {
+      list-style: none;
+      margin: var(--space-md) 0;
+    }
+
+    .detail-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: var(--space-xs) 0;
+      border-bottom: 1px dashed var(--border-color);
+      font-size: 0.9375rem;
+    }
+
+    .detail-list li span:first-child {
+      color: var(--text-muted);
+    }
+
+    .detail-list li span:last-child {
+      font-family: var(--font-mono);
+      color: var(--text-main);
+      text-align: right;
+    }
+
+    /* Pullquote */
+    blockquote {
+      border-left: 2px solid var(--accent);
+      padding-left: var(--space-md);
+      margin: var(--space-lg) 0;
+      font-style: italic;
+      color: var(--text-main);
+      font-size: 1.15rem;
+    }
+
+    /* ==========================================================================
+       BOTTOM FIXED ACTION BAR (PHONE-OPTIMIZED)
+       ========================================================================== */
+    .action-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding: var(--space-sm) var(--space-md);
+      display: flex;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.03);
+      padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom));
+    }
+
+    .action-bar-inner {
+      width: 100%;
+      max-width: var(--container-max-width);
+      display: flex;
+      gap: var(--space-sm);
+    }
+
+    .btn {
+      flex: 1;
+      padding: 14px var(--space-md);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: opacity 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:active {
+      opacity: 0.8;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--accent-contrast);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border-color: var(--border-color);
+      color: var(--text-main);
+    }
+
+    /* Modal Sheet for Contact Info */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1000;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      backdrop-filter: blur(2px);
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-sheet {
+      background-color: var(--bg-surface);
+      width: 100%;
+      max-width: var(--container-max-width);
+      border-top-left-radius: var(--radius-lg);
+      border-top-right-radius: var(--radius-lg);
+      padding: var(--space-lg) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom));
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+      animation: slideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Global Header -->
+  <header>
+    <div class="viewport nav-content">
+      <div class="status-pill meta-sans">
+        <span class="status-dot"></span> Available
+      </div>
+
+      <!-- Live Theme Switcher to easily test variations -->
+      <div class="theme-selector">
+        <span>Palette:</span>
+        <select id="themePicker" aria-label="Switch Theme Palette">
+          <option value="warm-stone" selected>Warm Stone</option>
+          <option value="nordic-ink">Nordic Ink</option>
+          <option value="dark-slate">Dark Slate</option>
+          <option value="raw-sand">Raw Sand</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <main class="viewport">
+
+    <!-- Hero / Header Details -->
+    <section class="hero">
+      <span class="hero-meta meta-sans">Cadastral Ref. 842-B · Valais Uplands</span>
+      <h1>Parcel 408 / Wild Meadow</h1>
+      <div class="price-tag">€ 385,000</div>
+    </section>
+
+    <!-- Key Metrics Grid -->
+    <div class="spec-grid">
+      <div class="spec-item">
+        <span class="spec-label meta-sans">Surface Area</span>
+        <span class="spec-value">12,450 m²</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label meta-sans">Zoning Type</span>
+        <span class="spec-value">R-1 Low Density</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label meta-sans">Elevation</span>
+        <span class="spec-value">640 m AMSL</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label meta-sans">Solar Exposure</span>
+        <span class="spec-value">South-Southwest</span>
+      </div>
+    </div>
+
+    <!-- Editorial Narrative -->
+    <article>
+      <p class="lead">
+        A continuous, gently sloping parcel situated along the western ridge of the plateau, offering unobstructed views over the valley and direct private road access.
+      </p>
+
+      <p>
+        The land features mature native oak stands along its northern boundary, acting as a natural windbreak, while the central clearings remain bathed in sunlight throughout the day. It has remained fallow and free of chemical intervention for over three decades, preserving natural soil biome and drainage capacity.
+      </p>
+
+      <!-- Visual Placeholder 1: Contour / Plot Layout -->
+      <figure class="media-card">
+        <div class="image-frame">
+          <!-- Geometric Topography Placeholder (Replace with <img src="...">) -->
+          <svg class="placeholder-svg" viewBox="0 0 400 300">
+            <path d="M 0,200 Q 100,160 200,210 T 400,180" />
+            <path d="M 0,160 Q 120,130 220,170 T 400,140" />
+            <path d="M 0,120 Q 140,100 240,130 T 400,100" />
+            <polygon points="120,90 280,110 240,240 80,220" stroke="currentColor" stroke-dasharray="4" fill="currentColor" fill-opacity="0.05" />
+            <circle cx="200" cy="150" r="3" fill="currentColor"/>
+            <text x="210" y="153" font-size="10" font-family="monospace" fill="currentColor">12,450 m² BOUNDARY</text>
+          </svg>
+        </div>
+        <figcaption>
+          <span>Topographic Boundary Diagram</span>
+          <span class="mono">Fig. 01</span>
+        </figcaption>
+      </figure>
+
+      <h2>Topography & Terrain</h2>
+      <p>
+        The site naturally splits into three natural terraces. The upper tier provides optimal structural ground for construction on bedrock, while the lower two tiers retain deep topsoil suitable for private orchards, gardens, or unbuilt recreation buffer zones.
+      </p>
+
+      <blockquote>
+        “An undisturbed pocket of land where architectural privacy meets total climatic exposure.”
+      </blockquote>
+
+      <h2>Infrastructure & Utilities</h2>
+      <p>
+        Unlike remote off-grid tracts, Parcel 408 is fully prepared at boundary level for connection to municipal systems without requiring right-of-way negotiations:
+      </p>
+
+      <ul class="detail-list">
+        <li><span>Access Road</span> <span>Paved Asphalt (6m wide)</span></li>
+        <li><span>Electrical Grid</span> <span>Low-voltage at boundary</span></li>
+        <li><span>Potable Water</span> <span>Municipal line connection</span></li>
+        <li><span>Sewage / Drainage</span> <span>Individual septic mandated</span></li>
+        <li><span>Telecommunications</span> <span>Fiber-optic conduit ready</span></li>
+      </ul>
+
+      <!-- Visual Placeholder 2: Horizon View -->
+      <figure class="media-card">
+        <div class="image-frame">
+          <svg class="placeholder-svg" viewBox="0 0 400 300">
+            <line x1="0" y1="210" x2="400" y2="210" />
+            <polygon points="40,210 110,120 180,210" />
+            <polygon points="150,210 240,90 330,210" />
+            <polygon points="280,210 340,150 400,210" />
+            <circle cx="310" cy="70" r="20" stroke-width="0.5" />
+          </svg>
+        </div>
+        <figcaption>
+          <span>South-West Valley Sightline</span>
+          <span class="mono">Fig. 02</span>
+        </figcaption>
+      </figure>
+
+      <h2>Planning Potential & Legal Status</h2>
+      <p>
+        Classified under residential low-density development ordinance. Permitted constructible footprint allows for a single primary residence up to 350 m² of usable floor space across two levels, plus detached outbuildings. Freehold title is clean, unencumbered by easements or third-party rights.
+      </p>
+
+      <hr class="section-divider" />
+
+      <!-- Cadastral Specifications Table -->
+      <h3>Cadastral Data</h3>
+      <ul class="detail-list">
+        <li><span>Municipality</span> <span>Saint-Luc (VS)</span></li>
+        <li><span>Section / Sheet</span> <span>A / 04</span></li>
+        <li><span>Coordinates</span> <span id="coords">46.2214° N, 7.6180° E</span></li>
+        <li><span>Property Tax (Est.)</span> <span>€ 1,120 / year</span></li>
+      </ul>
+    </article>
+  </main>
+
+  <!-- Phone-First Bottom Sticky Bar -->
+  <aside class="action-bar">
+    <div class="action-bar-inner">
+      <button class="btn btn-secondary" onclick="copyCoordinates()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Copy Coords
+      </button>
+      <button class="btn btn-primary" onclick="toggleModal(true)">
+        Inquire / Dossier
+      </button>
+    </div>
+  </aside>
+
+  <!-- Clean Inquiry Modal Sheet -->
+  <div class="modal" id="inquiryModal" onclick="handleBackdropClick(event)">
+    <div class="modal-sheet">
+      <h2>Direct Inquiries</h2>
+      <p class="meta-sans" style="color: var(--text-muted); margin-bottom: var(--space-md);">
+        Direct representation by the owner. Complete cadastral surveys, soil assessment reports, and title records are available upon request.
+      </p>
+      
+      <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+        <a href="mailto:estate@parcel408.internal?subject=Inquiry:%20Parcel%20408" class="btn btn-primary">
+          Send Email Inquiry
+        </a>
+        <a href="tel:+41000000000" class="btn btn-secondary">
+          Direct Line: +41 00 000 000
+        </a>
+        <button class="btn" style="background: transparent; color: var(--text-subtle); margin-top: var(--space-xs);" onclick="toggleModal(false)">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Micro Interaction Scripts -->
+  <script>
+    // Theme Switcher Logic
+    const themePicker = document.getElementById('themePicker');
+    themePicker.addEventListener('change', (e) => {
+      document.documentElement.setAttribute('data-theme', e.target.value);
+    });
+
+    // Modal Sheet Handlers
+    function toggleModal(show) {
+      const modal = document.getElementById('inquiryModal');
+      modal.classList.toggle('open', show);
+      document.body.style.overflow = show ? 'hidden' : '';
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'inquiryModal') {
+        toggleModal(false);
+      }
+    }
+
+    // Coordinates Copy Helper
+    function copyCoordinates() {
+      const coords = document.getElementById('coords').innerText;
+      navigator.clipboard.writeText(coords).then(() => {
+        alert('Coordinates copied to clipboard: ' + coords);
+      });
+    }
+  </script>
+</body>
+</html>
